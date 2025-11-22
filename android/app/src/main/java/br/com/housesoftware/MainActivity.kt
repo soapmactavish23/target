@@ -1,4 +1,4 @@
-package com.target
+package br.com.housesoftware
 
 import android.os.Build
 import android.os.Bundle
