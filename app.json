@@ -2,7 +2,7 @@
   "expo": {
     "name": "target",
     "slug": "target",
-    "scheme": "target", 
+    "scheme": "target",
     "version": "1.0.0",
     "android": {
       "package": "br.com.housesoftware",
@@ -13,7 +13,8 @@
       }
     },
     "plugins": [
-      "expo-router"
+      "expo-router",
+      "expo-font"
     ]
   }
 }
