@@ -7,6 +7,7 @@ import {
   Inter_500Medium,
   Inter_700Bold,
 } from "@expo-google-fonts/inter";
+import { Loading } from "@/components/Loading";
 
 export default function Layout() {
   const [fontLoaded] = useFonts({
@@ -16,7 +17,7 @@ export default function Layout() {
   });
 
   if (!fontLoaded) {
-    return;
+    return <Loading />;
   }
 
   return (
