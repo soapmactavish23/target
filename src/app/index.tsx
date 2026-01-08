@@ -3,7 +3,7 @@ import { HomeHeader } from "@/components/HomeHeader";
 import { List } from "@/components/List";
 import { Target } from "@/components/Target";
 import { router } from "expo-router";
-import { View } from "react-native";
+import { View, StatusBar } from "react-native";
 
 const summary = {
   total: "R$ 2.680,00",
@@ -38,6 +38,7 @@ const targets = [
 export default function Index() {
   return (
     <View style={{ flex: 1 }}>
+      <StatusBar barStyle="light-content" />
       <HomeHeader data={summary} />
 
       <List
@@ -47,7 +48,7 @@ export default function Index() {
         renderItem={({ item }) => (
           <Target
             data={targets[0]}
-            onPress={() => () => router.navigate(`/in-progress/${item.id}`)}
+            onPress={() => router.navigate("/target")}
           />
         )}
         emptyMessage="Nenhuma meta. Toque em nova meta para criar."
