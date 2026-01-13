@@ -48,7 +48,7 @@ export default function Index() {
         renderItem={({ item }) => (
           <Target
             data={targets[0]}
-            onPress={() => router.navigate("/target")}
+            onPress={() => router.navigate("/in-progress/1")}
           />
         )}
         emptyMessage="Nenhuma meta. Toque em nova meta para criar."
