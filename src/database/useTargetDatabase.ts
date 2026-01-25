@@ -5,6 +5,16 @@ export type TargetCreate = {
   amount: number;
 };
 
+export type TypeResponse = {
+  id: number;
+  name: string;
+  amount: number;
+  current: number;
+  percentage: number;
+  created_at: Date;
+  updated_at: Date;
+};
+
 export function useTargetDatabase() {
   const database = useSQLiteContext();
 
@@ -18,5 +28,16 @@ export function useTargetDatabase() {
       $amount: data.amount,
     });
   }
-  return { create };
+
+  function listBySavedValue() {
+    return database.getAllAsync<TypeResponse>(`
+            SELECT
+                targets.id,
+                targets.name,
+                targets.amount
+            FROM targets
+        `);
+  }
+
+  return { create, listBySavedValue };
 }
